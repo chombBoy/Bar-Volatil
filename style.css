@@ -1,0 +1,342 @@
+:root {
+  --blue: #19122B;
+  --grey: #F4F3EF;
+  --red: #F84D3A;
+  font-size: 20px;
+}
+
+body {
+  margin: auto;
+  background: var(--grey);
+  font-family: 'Gill Sans MT', sans-serif;
+  margin: 0 6vw;
+  position: relative;
+}
+
+img {
+  object-fit: contain;
+}
+
+
+/* Typografi */
+
+h1 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+
+h2 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.smallheading {
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.calisto {
+  font-family: Calisto MT, serif;
+
+}
+
+.italic {
+  font-style: italic;
+}
+
+a, a:visited {
+  color:#180D2C;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+a:hover {
+  font-family: 'Calisto MT', serif;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+
+li {
+  list-style: none;
+  padding: 4px;
+}
+
+
+nav {
+  padding: 1em 0;
+}
+
+
+ul {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin-right: 1.5em;
+}
+
+.outline {
+  position: relative;
+  color: transparent;
+  font-family: 'Gill Sans', sans-serif;
+   -webkit-text-stroke: 1.5px var(--blue);
+   text-stroke: 1.5px var(--blue);
+}
+
+
+.outline:hover {
+  color: var(--blue);
+  -webkit-text-stroke: 0;
+}
+
+
+/* Container */
+
+header {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid var(--blue);
+  position: relative;
+}
+
+main {
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em 0 1em 0;
+  padding: 0 1.8em;
+}
+
+address, .openinghours {
+  display: flex;
+  flex-direction: column;
+}
+
+address *, .openinghours * {
+  /* display: flex;
+  flex-direction: row; */
+  margin: .4em 0;
+  font-style: normal;
+}
+
+#logo {
+  margin: 0 auto;
+}
+
+.ikoner {
+  position: absolute;
+  right: 5vw;
+}
+
+.ikoner a {
+  margin: 0 1em 0 0;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.content p {
+  margin-top: 0;
+}
+
+
+.button a {
+  border: 2px solid var(--red);
+  color: var(--red);
+  display: inline-block;
+  width: 150px;
+  height: 25px;
+  padding: 15px 25px;
+  text-align: center;
+  margin-bottom: 1em;
+  transform: translateY(25%);
+}
+
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.frame:before {
+  content:"";
+  width: 100%;
+  height: 90%;
+  outline: 2px solid var(--blue);
+  z-index: 10;
+  position: absolute;
+}
+
+/* Karousel */
+.instagram {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid var(--blue);
+  height: 400px;
+  max-width: 300px;
+  padding-left: 1em;
+  overflow: hidden;
+  position: relative;
+}
+
+.instagram .instagram_item,
+.instagram .instagram_item--hidden {
+  display: none;
+}
+
+.instagram instagram_item img {
+  margin: 0 1em;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
+.instagram .instagram_item--visible {
+  display: block;
+  animation: fadeVisibility 0.5s;
+}
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity 1;
+    transform: opacity linear;
+ }
+}
+.instagram .instagram_actions{
+  display: flex;
+  width: 84%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.instagram .instagram_actions button {
+  border-radius: 50px;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.regular:hover {
+  font-style: normal;
+  color: var(--red)
+}
+
+.skip-link {
+  left: 50%;
+  position: absolute;
+  transform: translateY(-100%)
+}
+
+.skip-link:focus {
+  transform: translateY(0%);
+  left: 0%;
+}
+
+
+@media screen and (min-width: 1200px) {
+
+  main {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    width: 100%;
+  }
+
+  nav {
+    padding: 3em;
+    width: 250px;
+  }
+
+  section {
+    padding: 3em 0;
+  }
+
+  footer {
+    justify-content: space-evenly;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 25%;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .hero * {
+    flex-shrink: 1;
+  }
+
+  .frame {
+    width: 600px;
+  }
+
+  .content {
+    flex-shrink: 1;
+    max-width: 320px;
+    margin-left: 2em;
+  }
+
+  .instagrambox {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .instagram {
+    padding: 0 1.5em;
+    position: relative;
+  }
+
+.next, .prev {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transform-origin: center;
+  transform: translateY(45%);
+  font-size: 1.5em;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+  address, .openinghours {
+    display: flex;
+    align-items: baseline;
+
+  }
+
+
+}
